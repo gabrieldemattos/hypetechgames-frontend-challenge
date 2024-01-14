@@ -4,6 +4,7 @@ import WallStreet from './wall-street'
 import { SessionContext } from '@/core/providers/session.provider'
 import CrashGameProvider from '@/core/providers/games/crash-game.provider'
 import WallStreetGameProvider from '../core/providers/games/wall-street-game.provider'
+import { LanguageContextProvider } from './motograu/context/LanguageContext'
 
 export default function Panel() {
   const {
@@ -117,7 +118,9 @@ export default function Panel() {
             setGameStatus={setGameStatus}
             gameInstance={gameInstance}
           >
-            <Motograu />
+            <LanguageContextProvider>
+              <Motograu />
+            </LanguageContextProvider>
           </CrashGameProvider>
         )
         break
@@ -187,7 +190,8 @@ export default function Panel() {
         )
         break
       case 'moedinha':
-        setComponent(<MoedinhaGameProvider
+        setComponent(
+          <MoedinhaGameProvider
             connection={connection}
             session={session}
             gameStatus={gameStatus}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './header'
 import ListItem from './list-item'
 
 export enum TransactionStatus {
@@ -9,10 +8,15 @@ export enum TransactionStatus {
 }
 
 export type Transaction = {
-  username: string
+  player: {
+    username: string
+  }
   amount: number
-  cashed_out_at: number | null
+  cashed_out_at?: number
   status: TransactionStatus
+  outcome: string
+  payout: number
+  profit: number
 }
 
 type Props = {
@@ -21,11 +25,9 @@ type Props = {
 
 export default function BetList({ items }: Props) {
   return (
-    <div className="relative">
-      <Header />
-
-      {items.map((item) => (
-        <ListItem data={item} />
+    <div className="font-bold">
+      {items.map((item, idx) => (
+        <ListItem key={idx} data={item} />
       ))}
     </div>
   )

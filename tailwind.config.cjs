@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './index.html',
@@ -14,10 +16,18 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],
+      jost: ['Jost', 'sans-serif'],
+      Marhey: ['marhey', 'sans-serif'],
     },
     extend: {
       colors: {
         'green-custom': '#7bd95d',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-2deg)' },
+          '50%': { transform: 'rotate(2deg)' },
+        },
       },
     },
   },

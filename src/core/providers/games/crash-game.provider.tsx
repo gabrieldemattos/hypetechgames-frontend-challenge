@@ -200,7 +200,9 @@ export default function CrashGameProvider({
       connection.on('cash-message', (data) => {
         const { multiplier, amount, index } = data
 
-        let successSound = new Audio('../../../../sounds/successSound.mp3')
+        let successSound = new Audio(
+          '../../../../sounds/successSound.mp3'
+        )
         successSound.play()
 
         const transaction = transactions[index]
@@ -234,7 +236,9 @@ export default function CrashGameProvider({
         setTransactions({ ...transactions, [index]: transaction })
 
         // Reproduza um som de erro
-        let errorSound = new Audio('../../../../sounds/errorSound.mp3')
+        let errorSound = new Audio(
+          '../../../../sounds/errorSound.mp3'
+        )
 
         errorSound.play()
 
@@ -453,7 +457,7 @@ export default function CrashGameProvider({
         playerName,
         soundEnabled,
         setSoundEnabled,
-        soundClick
+        soundClick,
       }}
     >
       {children}

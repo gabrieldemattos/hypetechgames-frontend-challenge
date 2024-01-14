@@ -16,8 +16,7 @@ type Props = {
 }
 
 export const Chat = ({ show }: Props) => {
-  const { messages, sendMessage, session } =
-    useContext(WallStreetGameContext)
+  const { messages, sendMessage } = useContext(WallStreetGameContext)
   const [showEmojiPicker, setShowEmojiPicker] = useState(false)
   const [message, setMessage] = useState<string>('')
 

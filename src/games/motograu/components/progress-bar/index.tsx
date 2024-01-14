@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+
+import { useLanguageContext } from '../../hooks/useLanguageContext'
 
 type Props = {
   value: number
   max: number
   color: string
-  label?: string
 }
 
 const getBackgroundColor = (color: string) => {
   switch (color) {
     case 'blue':
-      return 'bg-blue-600'
+      return 'bg-[#1b648f]'
     case 'lime':
       return 'bg-[#28a909]'
     case 'yellow':
@@ -20,37 +21,49 @@ const getBackgroundColor = (color: string) => {
     case 'red':
       return 'bg-red-700'
     case 'pink':
-      return 'bg-[#C5F700]'
+      return 'bg-pink-700'
     case 'rose':
       return 'bg-rose-700'
     case 'gray':
       return 'bg-gray-400'
+    default:
+      return 'bg-black'
   }
 }
 
-function ProgressBar(props) {
-  const [percentage, setPercentage] = useState('100%')
-
-  useEffect(() => {
-    if (props.value === 10) setPercentage('100%')
-    else if (props.value < 10) setPercentage('0%')
-  }, [props.value])
+export default function ProgressBar({ max, value, color }: Props) {
+  const { selectedLanguage } = useLanguageContext()
 
   return (
-    <div className="w-60 sm:w-96 bg-black relative bg-opacity-20 rounded-full">
+    <div className="w-[28.125rem] relative flex items-center border border-gray-500 bg-gray-600 border-opacity-50 rounded-md h-9 dark:bg-gray-700 p-1">
       <div
-        className="bg-[#ff1e4c] flex items-center text-xs font-medium text-blue-100 leading-none rounded-full h-6"
+        className={`${getBackgroundColor(
+          color
+        )} h-full transition-all duration-100 rounded-md`}
         style={{
-          width: percentage,
-          transition: 'linear',
-          transitionDuration: '10000ms',
+          width: `${(value / max) * 100}%`,
+          transitionTimingFunction: 'linear',
+          transitionDuration: '990ms',
         }}
       ></div>
-      <span className="top-1 left-[17%] sm:left-[30%] lg:left-[35%] uppercase absolute text-xs text-white font-bold">
-        Próxima rodada
-      </span>
+
+      <small className="absolute w-full h-full font-semibold text-center text-xs pointer-events-none flex items-center justify-center text-gray-200 uppercase tracking-wide">
+        {selectedLanguage === 'pt-BR'
+          ? 'A próxima rodada começará em'
+          : 'Next round starts in'}{' '}
+        {Math.abs(value)}{' '}
+        {selectedLanguage === 'pt-BR'
+          ? value > 1
+            ? 'segundos'
+            : 'segundo'
+          : value > 1
+          ? 'seconds'
+          : 'second'}
+        .{' '}
+        {selectedLanguage === 'pt-BR'
+          ? 'Prepare-se!'
+          : 'Prepare yourself!'}
+      </small>
     </div>
   )
 }
-
-export default ProgressBar

@@ -35,14 +35,11 @@ export default function Snackbar() {
             />
           )
         }
-        if (notification.type == NotificationType.TRANSACTION_NOT_ACCEPTED) {
-          return (
-            <Error
-              key={index}
-              {...notification}
-              index={index}
-            />
-          )
+        if (
+          notification.type ==
+          NotificationType.TRANSACTION_NOT_ACCEPTED
+        ) {
+          return <Error key={index} {...notification} index={index} />
         }
       })}
     </div>
