@@ -22,7 +22,9 @@ const AvailableRanks = ({ show, toggle }: AvailableRanksProps) => {
         <div className="flex">
           <div className="w-full">
             <h1 className="text-2xl uppercase text-center text-white">
-              Ranks disponíveis
+              {selectedLanguage === 'pt-BR'
+                ? 'Ranks disponíveis'
+                : 'Available ranks'}
             </h1>
           </div>
 

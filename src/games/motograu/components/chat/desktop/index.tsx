@@ -154,7 +154,7 @@ export const Chat = () => {
 
           <div className="flex justify-center mt-4">
             <button
-              className="btn border border-gray-900 bg-gray-900 bg-opacity-5 rounded-full fixed bottom-[5.233rem] btn-sm animate-bounce"
+              className="btn border border-gray-900 bg-gray-900 bg-opacity-5 rounded-full fixed bottom-[11%] btn-sm animate-bounce"
               onClick={scrollToBottom}
             >
               <ArrowDownIcon className="h-4 w-4 font-bold" />
