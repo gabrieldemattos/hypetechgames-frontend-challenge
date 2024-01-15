@@ -1,12 +1,12 @@
-# Desafio Prático de Frontend Hypetech - Motorgrau (Customizado)
+# Desafio Prático de Frontend Hypetech - Motograu (Customizado)
 
-Bem-vindo à minha contribuição para o Desafio Prático de Frontend da Hypetech, focada no jogo **Motorgrau**.
+Bem-vindo à minha contribuição para o Desafio Prático de Frontend da Hypetech, focada no jogo **Motograu**.
 
 [Apresentação das contribuições](https://youtu.be/EafBSnSQ7iM)
 
 ## Sobre o Desafio
 
-Este repositório original faz parte do Desafio Prático de Frontend da Hypetech. A proposta do desafio era aprimorar a interface de dois jogos da Hypetech: **Motograu** e **WallStreet**. No meu caso, escolhi trabalhar no jogo **Motorgrau**.
+Este repositório original faz parte do Desafio Prático de Frontend da Hypetech. A proposta do desafio era aprimorar a interface de dois jogos da Hypetech: **Motograu** e **WallStreet**. No meu caso, escolhi trabalhar no jogo **Motograu**.
 
 - [Repositório do Desafio Prático de Frontend Hypetech](https://github.com/hypetechgames/frontend-challenge)
 
@@ -18,7 +18,7 @@ Este repositório original faz parte do Desafio Prático de Frontend da Hypetech
 
 ## Minhas Alterações
 
-Neste desafio, trabalhei para aprimorar a interface do jogo **Motorgrau**, implementando melhorias e personalizações significativas. Abaixo estão algumas das principais alterações que fiz:
+Neste desafio, trabalhei para aprimorar a interface do jogo **Motograu**, implementando melhorias e personalizações significativas. Abaixo estão algumas das principais alterações que fiz:
 
 1. **Nova Interface para Desktop e Mobile:**
 
