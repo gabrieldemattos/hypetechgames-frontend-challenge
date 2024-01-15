@@ -28,8 +28,8 @@ Neste desafio, trabalhei para aprimorar a interface do jogo **Motorgrau**, imple
      - **Organização Lógica:** O layout foi reestruturado para otimizar a experiência do usuário. Cerca de 90% da interação do usuário está concentrada no lado esquerdo, onde podem verificar o número de usuários conectados, enviar mensagens no chat (podendo ocultar o chat ou não), realizar apostas e trocar o idioma.
      - **Componentes Centrais:** O núcleo da experiência do jogo foi destacado no centro da tela para fácil acesso e destaque.
      - **Informações Adicionais:** Adicionei um painel à direita, fornecendo informações sobre as apostas e o histórico do usuário. O canto superior direito oferece acesso rápido ao perfil do usuário, status, classificação atual e à missão diária.
-     - **Versão Mobile:** Na versão mobile, algumas adaptações foram feitas, como a movimentação do ranking para o perfil e a exibição dos usuários online no topo da aplicação.
-
+     - **Versão Mobile:** Na versão mobile, algumas adaptações foram feitas, como a movimentação do ranking para o perfil, exibição dos usuários online no topo da aplicação e chat movido para a barra de navegação (ao lado do perfil do usuário).
+    
    ![Nova Interface em Desktop](screenshots/desktop.png)
    ![Nova Interface em Mobile](screenshots/mobile.png)
 
