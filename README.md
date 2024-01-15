@@ -2,7 +2,7 @@
 
 Bem-vindo à minha contribuição para o Desafio Prático de Frontend da Hypetech, focada no jogo **Motorgrau**.
 
-![Apresentação das contribuições](https://youtu.be/EafBSnSQ7iM)
+[Apresentação das contribuições](https://youtu.be/EafBSnSQ7iM)
 
 ## Sobre o Desafio
 
