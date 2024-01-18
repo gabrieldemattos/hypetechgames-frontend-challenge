@@ -38,12 +38,12 @@ const TextField = ({
           onChange={(e) => setValue(e.target.value)}
           id={id}
           autoComplete="off"
-          className="h-full font-bold bg-transparent input p-0 input-sm w-full disabled:bg-transparent border-none text-base xl:text-2xl mt-[.0625rem] text-white outline-none focus:outline-none focus:ring-0"
+          className="h-full font-bold bg-transparent input p-0 input-sm w-full disabled:bg-transparent border-none text-base xl:text-xl mt-[.0625rem] text-white outline-none focus:outline-none focus:ring-0"
           placeholder=" "
         />
 
-        <span className="text-base xl:text-xl">
-          {label === 'Quantidade'
+        <span className="text-base xl:text-lg">
+          {label === 'Quantidade' || label === 'Quantity'
             ? ''
             : selectedLanguage === 'pt-BR'
             ? 'R$'

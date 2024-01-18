@@ -3,7 +3,7 @@ import CrashForm from './crash/form'
 
 export default function DesktopControl() {
   return (
-    <div className="hidden w-full gap-3 flex-wrap md:flex-wrap md:flex">
+    <div className="flex w-full gap-3">
       <CrashForm position="left" />
 
       <CrashForm position="right" />

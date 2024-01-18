@@ -25,7 +25,7 @@ export default function TransactionBar() {
 
   return (
     <div className="h-full flex flex-col mt-10 lg:mt-0">
-      <div className="flex flex-col transaction-bar min-h-[18.75rem] flex-1 grow h-full w-full p-3 rounded-md bg-black bg-opacity-20 border border-gray-600 border-opacity-20">
+      <div className="flex flex-col transaction-bar min-h-[35.75rem] flex-1 grow w-full p-3 rounded-md bg-black bg-opacity-20 border border-gray-600 border-opacity-20">
         <img
           src="../images/logos/logotipo-moto-grau.png"
           alt="logotipo do jogo moto grau"
@@ -60,7 +60,7 @@ export default function TransactionBar() {
         </If>
       </div>
 
-      <div className="bg-black bg-opacity-20 rounded-md mb-10 lg:mb-0">
+      <div className="bg-black bg-opacity-20 rounded-md">
         <Footer />
       </div>
     </div>

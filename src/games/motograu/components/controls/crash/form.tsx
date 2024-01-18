@@ -137,14 +137,13 @@ export default function CrashForm({ position }: FormProps) {
   ]
 
   return (
-    <div className="bg-black border border-gray-600 bg-opacity-20 border-opacity-20 crash-form w-full h-45 md:w-full flex rounded-md p-3 relative px-10">
+    <div className="bg-black border border-gray-600 bg-opacity-20 border-opacity-20 w-full md:w-full flex rounded-md py-3 relative px-8 lg:px-3">
       <form
         ref={formRef}
         method="POST"
-        className="w-full xl:w-[100%] mx-auto justify-center"
+        className="w-full xl:w-[100%]"
         onSubmit={(e) => submitTransaction(e)}
       >
-        <input type="hidden" name="teste" />
         <div className="w-full flex justify-center mb-3">
           <div className="w-[100%] flex gap-5">
             <Tabs
@@ -156,30 +155,32 @@ export default function CrashForm({ position }: FormProps) {
             />
           </div>
         </div>
-        <section className="flex flex-col gap-3">
-          <div className="flex flex-col w-full">
-            <div className="flex gap-2 h-12 lg:h-14">
-              <div className="w-full">
-                <TextField
-                  id="valueInput"
-                  name="amount"
-                  disabled={
-                    transaction.status !=
-                    TransactionStatus.UNREGISTERED
-                  }
-                  value={transaction.amount}
-                  setValue={updateAmount}
-                  label={
-                    selectedLanguage === 'pt-BR'
-                      ? 'Valor da aposta'
-                      : 'Bet value'
-                  }
-                />
-              </div>
+        <section className="flex gap-3 flex-col lg:flex-col xl:flex-row">
+          <div className="flex w-full flex-col justify-center gap-3">
+            {/* CAMPO VALOR DA APOSTA */}
+            <div className="flex gap-3 flex-col lg:flex-row">
+              <div className="flex h-12 lg:h-14 gap-2">
+                <div className="w-full">
+                  <TextField
+                    id="valueInput"
+                    name="amount"
+                    disabled={
+                      transaction.status !=
+                      TransactionStatus.UNREGISTERED
+                    }
+                    value={transaction.amount}
+                    setValue={updateAmount}
+                    label={
+                      selectedLanguage === 'pt-BR'
+                        ? 'Valor da aposta'
+                        : 'Bet value'
+                    }
+                  />
+                </div>
 
-              <div className="w-1/2">
-                <div className="grid gap-2 h-full grid-cols-2">
-                  <div className="col-span-1">
+                {/* BOTÃO 1/2 e 2x PARTE MOBILE*/}
+                <div className="flex gap-2 lg:hidden xl">
+                  <div>
                     <button
                       onClick={divideAmount}
                       type="button"
@@ -193,7 +194,7 @@ export default function CrashForm({ position }: FormProps) {
                     </button>
                   </div>
 
-                  <div className="col-span-1">
+                  <div>
                     <button
                       onClick={doubleAmount}
                       type="button"
@@ -208,9 +209,67 @@ export default function CrashForm({ position }: FormProps) {
                   </div>
                 </div>
               </div>
+
+              {/* FAST BETS MOBILE*/}
+              <div className="flex gap-2 items-center justify-between lg:hidden">
+                {betValues.map((value) => (
+                  <FastBetButton
+                    key={value}
+                    value={value}
+                    disabled={
+                      transaction.status !=
+                      TransactionStatus.UNREGISTERED
+                    }
+                    onClick={() =>
+                      updateAmount(formatBRLCurrency(value))
+                    }
+                  />
+                ))}
+              </div>
+
+              {/* AUTO RETIRAR */}
+              <div className="flex gap-3 h-14 lg:w-full xl:w-auto">
+                <TextField
+                  id="valueInput"
+                  name="amount"
+                  disabled={
+                    transaction.status !=
+                    TransactionStatus.UNREGISTERED
+                  }
+                  value={transaction.exitValue}
+                  setValue={updateExitValue}
+                  label={
+                    selectedLanguage === 'pt-BR'
+                      ? 'Auto Retirar'
+                      : 'Auto Withdraw'
+                  }
+                />
+                <If
+                  condition={transaction.mode == TransactionMode.AUTO}
+                >
+                  <div className="w-[50%]">
+                    <TextField
+                      id="valueInput"
+                      name="amount"
+                      disabled={
+                        transaction.status !=
+                        TransactionStatus.UNREGISTERED
+                      }
+                      value={transaction.roundCount}
+                      setValue={updateRoundCount}
+                      label={
+                        selectedLanguage === 'pt-BR'
+                          ? 'Quantidade'
+                          : 'Quantity'
+                      }
+                    />
+                  </div>
+                </If>
+              </div>
             </div>
 
-            <div className="my-2 flex gap-2 items-center justify-between">
+            {/* FAST BETS DESKTOP*/}
+            <div className="hidden gap-2 items-center justify-between lg:flex">
               {betValues.map((value) => (
                 <FastBetButton
                   key={value}
@@ -225,45 +284,40 @@ export default function CrashForm({ position }: FormProps) {
                 />
               ))}
             </div>
+          </div>
 
-            <div className="flex gap-3 h-14">
-              <TextField
-                id="valueInput"
-                name="amount"
-                disabled={
-                  transaction.status != TransactionStatus.UNREGISTERED
-                }
-                value={transaction.exitValue}
-                setValue={updateExitValue}
-                label={
-                  selectedLanguage === 'pt-BR'
-                    ? 'Auto Retirar'
-                    : 'Auto Withdraw'
-                }
-              />
-              <If
-                condition={transaction.mode == TransactionMode.AUTO}
-              >
-                <TextField
-                  id="valueInput"
-                  name="amount"
+          {/* BOTÃO INICIAR APOSTA */}
+          <div className="w-full flex gap-2">
+            {/* BOTÃO 1/2 e 2x PARTE DESKTOP*/}
+            <div className="hidden flex-col gap-2 lg:flex lg:flex-row xl:flex-col">
+              <div>
+                <button
+                  onClick={divideAmount}
+                  type="button"
                   disabled={
                     transaction.status !=
                     TransactionStatus.UNREGISTERED
                   }
-                  value={transaction.roundCount}
-                  setValue={updateRoundCount}
-                  label={
-                    selectedLanguage === 'pt-BR'
-                      ? 'Quantidade'
-                      : 'Quantity'
-                  }
-                />
-              </If>
-            </div>
-          </div>
+                  className="btn btn-ghost flex-1 w-full h-full rounded text-base lg:text-xl font-bold disabled:bg-gray-700 disabled:bg-opacity-30 border-gray-700 border-opacity-40"
+                >
+                  &frac12;
+                </button>
+              </div>
 
-          <div className="w-full mt-2">
+              <div>
+                <button
+                  onClick={doubleAmount}
+                  type="button"
+                  disabled={
+                    transaction.status !=
+                    TransactionStatus.UNREGISTERED
+                  }
+                  className="btn btn-ghost grow w-full h-full rounded capitalize text-sm lg:text-base font-bold disabled:bg-gray-700 disabled:bg-opacity-30 border-gray-700 border-opacity-40"
+                >
+                  2x
+                </button>
+              </div>
+            </div>
             <If
               condition={
                 transaction == null ||
@@ -271,9 +325,9 @@ export default function CrashForm({ position }: FormProps) {
               }
             >
               <button
-                className={`py-2 lg:py-3 uppercase flex items-center text-lg lg:text-xl rounded ${getBackgroundColor(
+                className={`py-2 lg:py-3 uppercase flex items-center justify-center text-lg rounded ${getBackgroundColor(
                   'green'
-                )} flex flex-col text-white h-full w-full tracking-widest transition-all duration-300 saturate-200 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)]`}
+                )} text-white h-full w-full tracking-widest transition-all duration-300 saturate-200 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)]`}
               >
                 <span className="font-normal text-white">
                   {transaction.mode == TransactionMode.COMMON
@@ -294,32 +348,49 @@ export default function CrashForm({ position }: FormProps) {
               }
             >
               <button
-                className={`py-2 lg:py-3 uppercase flex items-center text-xl rounded saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] ${getBackgroundColor(
+                className={`py-2 lg:py-3 uppercase flex items-center justify-center text-xl rounded saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] ${getBackgroundColor(
                   'red'
-                )} flex flex-col text-white h-full w-full transition-all duration-300`}
+                )} text-white h-full w-full transition-all duration-300`}
                 onClick={() => cancelTransaction(position)}
               >
+                {/* AUTO START QUANTIDADE MAIOR QUE ZERO */}
                 <If condition={transaction.autoStarted}>
-                  <span className="text-lg lg:text-xl">
-                    {selectedLanguage === 'pt-BR'
-                      ? 'Cancelar'
-                      : 'Cancel bet of $ '}{' '}
-                    {transaction.amount} ({transaction.roundCount + 1}
-                    )
-                  </span>
+                  <div className="text-lg flex lg:flex-col gap-1 lg:gap-0">
+                    <span>
+                      {selectedLanguage === 'pt-BR'
+                        ? 'Cancelar aposta'
+                        : 'Cancel bet'}
+                    </span>
+                    <span className="block">
+                      {selectedLanguage === 'pt-BR'
+                        ? 'de R$ '
+                        : 'of $ '}
+                      {transaction.amount} (
+                      {transaction.roundCount + 1})
+                    </span>
+                  </div>
                 </If>
 
+                {/* APOSTA MANUAL */}
                 <If condition={!transaction.autoStarted}>
-                  <span className="text-lg lg:text-xl">
-                    {selectedLanguage === 'pt-BR'
-                      ? 'Cancelar aposta de R$ '
-                      : 'Cancel bet of $ '}{' '}
-                    {transaction.amount}
-                  </span>
+                  <div className="text-lg flex lg:flex-col gap-1 lg:gap-0">
+                    <span>
+                      {selectedLanguage === 'pt-BR'
+                        ? 'Cancelar aposta '
+                        : 'Cancel bet '}
+                    </span>
+                    <span className="block">
+                      {selectedLanguage === 'pt-BR'
+                        ? 'de R$ '
+                        : 'of $ '}
+                      {transaction.amount}
+                    </span>
+                  </div>
                 </If>
               </button>
             </If>
 
+            {/* BOTÃO DE CANCELAR QUANDO A RODADA ESTIVER EM ANDAMENTO E O JOGADOR DEIXAR A APOSTA PREPARADA PARA A PRÓXIMA RODADA */}
             <If
               condition={
                 gameStatus != GameStatus.IDLE &&
@@ -328,16 +399,16 @@ export default function CrashForm({ position }: FormProps) {
             >
               <div className="flex flex-col w-full h-full">
                 <button
-                  className={`py-2 lg:py-3 uppercase flex items-center text-xl rounded saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] ${getBackgroundColor(
+                  className={`py-2 lg:py-3 uppercase flex items-center justify-center text-xl rounded saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] ${getBackgroundColor(
                     'red'
-                  )} flex flex-col text-white h-full w-full transition-all duration-300`}
+                  )} text-white h-full w-full transition-all duration-300`}
                   onClick={cancelFuterTransaction}
                 >
                   <If condition={transaction.autoStarted}>
                     <span className="text-lg lg:text-xl">
                       {selectedLanguage === 'pt-BR'
-                        ? 'Cancelar'
-                        : 'Cancel'}{' '}
+                        ? 'Cancelar aposta'
+                        : 'Cancel bet'}{' '}
                       ({transaction.roundCount})
                     </span>
                   </If>
@@ -345,14 +416,15 @@ export default function CrashForm({ position }: FormProps) {
                   <If condition={!transaction.autoStarted}>
                     <span className="text-lg lg:text-xl">
                       {selectedLanguage === 'pt-BR'
-                        ? 'Cancelar'
-                        : 'Cancel'}
+                        ? 'Cancelar aposta'
+                        : 'Cancel bet'}
                     </span>
                   </If>
                 </button>
               </div>
             </If>
 
+            {/* BOTÃO DE RETIRAR O DINHEIRO DURANTE A RODADA EM ANDAMENTO */}
             <If
               condition={
                 gameStatus == GameStatus.RUNNING &&
@@ -360,9 +432,9 @@ export default function CrashForm({ position }: FormProps) {
               }
             >
               <button
-                className={`py-2 lg:py-3 uppercase flex items-center text-xl rounded ${getBackgroundColor(
+                className={`py-2 lg:py-3 uppercase flex items-center justify-center text-xl rounded ${getBackgroundColor(
                   'amber'
-                )} flex flex-col text-white h-full w-full saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] tracking-widest transition-all duration-300`}
+                )} text-white h-full w-full saturate-100 [text-shadow:2px_2px_2px_rgb(0_0_0_/_40%)] tracking-widest transition-all duration-300`}
                 onClick={() => cashOut(position)}
               >
                 <If condition={transaction.autoStarted}>

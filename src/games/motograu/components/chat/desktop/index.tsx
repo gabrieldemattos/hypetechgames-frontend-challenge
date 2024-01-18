@@ -74,7 +74,7 @@ export const Chat = () => {
 
   const chatProperties = {
     height: showChat
-      ? 'h-[24%] transition-height ease-out duration-500'
+      ? 'h-[90%] transition-height ease-out duration-500'
       : 'h-0 mb-7',
     border: showChat
       ? 'border-gray-600 border border-opacity-20'
@@ -154,7 +154,7 @@ export const Chat = () => {
 
           <div className="flex justify-center mt-4">
             <button
-              className="btn border border-gray-900 bg-gray-900 bg-opacity-5 rounded-full fixed bottom-[11%] btn-sm animate-bounce"
+              className="btn border border-gray-900 bg-gray-900 bg-opacity-5 rounded-full fixed bottom-[8%] btn-sm animate-bounce"
               onClick={scrollToBottom}
             >
               <ArrowDownIcon className="h-4 w-4 font-bold" />

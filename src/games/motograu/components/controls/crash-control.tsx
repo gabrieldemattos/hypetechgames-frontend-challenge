@@ -4,10 +4,14 @@ import DesktopControl from './desktop-control'
 
 export default function CrashControl() {
   return (
-    <div className="w-full flex justify-center flex-wrap md:flex-nowrap">
-      <MobileControl />
+    <div className="w-full flex justify-center flex-wrap">
+      <div className="block sm:hidden">
+        <MobileControl />
+      </div>
 
-      <DesktopControl />
+      <div className="hidden sm:block">
+        <DesktopControl />
+      </div>
     </div>
   )
 }

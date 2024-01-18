@@ -33,6 +33,7 @@ function HomePage() {
     <div className="flex min-h-screen overflow-hidden bg-gradient-to-r motograu-game">
       <div className="flex w-full sm:gap-3 min-h-screen relative">
         <section className="flex flex-col h-full grow p-0">
+          {/* MENU DE NAVEGAÇÃO */}
           <div style={{ zIndex: 100 }}>
             <Navbar
               game="motograu"
@@ -41,11 +42,10 @@ function HomePage() {
             />
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">
-            <div className="col-span-12 sm:col-span-4 grow xl:col-span-3 order-2 sm:order-1">
-              {/* CONTROLES DE APOSTAS */}
-              <Controls />
+            {/* PARTE ESQUERDA, HISTÓRICO, APOSTAS E CHAT */}
+            <div className="col-span-12 grow xl:col-span-3 xl:order-1 order-1 flex flex-col">
+              <TransactionBar />
 
-              {/* CHAT */}
               <div className="w-full h-full hidden xl:block">
                 <Chat />
                 <div className="pl-2">
@@ -54,7 +54,8 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="col-span-12 sm:col-span-8 xl:col-span-7 relative order-1 sm:order-1 lg:order-2">
+            {/* DIREITA, TELA DE JOGO, CONTROLES DE APOSTA E HISTÓRICO DAS RODADAS ANTERIORES */}
+            <div className="col-span-12 xl:col-span-9 relative xl:order-2">
               <div className="flex gap-3 h-full flex-col relative">
                 <div className="grow relative z-0">
                   <iframe
@@ -62,7 +63,7 @@ function HomePage() {
                     className="rounded-md overflow-hidden w-full h-full pointer-events-none min-h-[15.625rem] sm:min-h-[18.75rem]"
                     src="/motograu/index.html"
                   ></iframe>
-                  <div className="transform sm:translate-y-[-40.625rem] translate-y-[-12.5rem]">
+                  <div className="transform xl:translate-y-[-30.625rem] translate-y-[-12.5rem] md:translate-y-[-15.625rem]">
                     {/* RODADA COMEÇA EM.... */}
                     <Display color={'blue'} />
                   </div>
@@ -70,15 +71,15 @@ function HomePage() {
 
                 {/* HISTORICO DE RESULTADOS */}
                 <Results />
+
+                {/* CONTROLES DE APOSTAS */}
+                <div className="div sm:mb-10 xl:mb-0">
+                  <Controls />
+                </div>
               </div>
 
               {/* MENSAGEM DE GANHO OU ERRO NA APOSTA */}
               <Snackbar />
-            </div>
-
-            <div className="col-span-12 xl:col-span-2 w-full h-full order-3">
-              {/* APOSTAS} */}
-              <TransactionBar />
             </div>
           </div>
         </section>
