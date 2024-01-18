@@ -16,6 +16,7 @@ import { FaceSmileIcon } from '@heroicons/react/24/outline'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import { IGameMessage } from '../../providers/interfaces/game-message.interface'
 import { dateToHumanReadable } from '@/core/helpers/date'
+import { getDateToHumanReadable } from '../../../utils/date'
 type Props = {
   show: boolean
 }
@@ -77,7 +78,10 @@ export const Chat = ({ show }: Props) => {
                           {data.message}
                         </div>
                         <div className="chat-footer text-xs opacity-50 mt-1">
-                          {dateToHumanReadable(data.createdAt)}
+                          {getDateToHumanReadable(
+                            data.createdAt,
+                            selectedLanguage
+                          )}
                         </div>
                       </div>
                     </If>
@@ -93,7 +97,10 @@ export const Chat = ({ show }: Props) => {
                           {data.message}
                         </div>
                         <div className="chat-footer text-xs opacity-50 mt-1">
-                          {dateToHumanReadable(data.createdAt)}
+                          {getDateToHumanReadable(
+                            data.createdAt,
+                            selectedLanguage
+                          )}
                         </div>
                       </div>
                     </If>

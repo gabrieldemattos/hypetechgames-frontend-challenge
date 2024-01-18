@@ -4,6 +4,7 @@ import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { dateToHumanReadable } from '@/core/helpers/date'
 import { useLanguageContext } from '../../../../hooks/useLanguageContext'
 import { formatCoin } from '../../../../utils/format-currency'
+import { getDateToHumanReadable } from '../../../../utils/date'
 
 type Props = {
   data: any
@@ -25,7 +26,7 @@ export default function ListItem({ data, showRoundInfo }: Props) {
         } `}
       >
         <h1 className="w-1/4 flex gap-3 items-center">
-          {dateToHumanReadable(data.updated_at)}
+          {getDateToHumanReadable(data.updated_at, selectedLanguage)}
         </h1>
         <h1 className="w-1/4 flex items-center justify-center gap-2">
           {formatCoin(data.amount, selectedLanguage)}

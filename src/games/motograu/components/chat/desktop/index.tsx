@@ -18,6 +18,7 @@ import {
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import { IGameMessage } from '../../providers/interfaces/game-message.interface'
 import { dateToHumanReadable } from '@/core/helpers/date'
+import { getDateToHumanReadable } from '../../../utils/date'
 
 export const Chat = () => {
   const { selectedLanguage } = useLanguageContext()
@@ -125,7 +126,10 @@ export const Chat = () => {
                       {data.message}
                     </div>
                     <div className="chat-footer text-xs opacity-50 mt-1">
-                      {dateToHumanReadable(data.createdAt)}
+                      {getDateToHumanReadable(
+                        data.createdAt,
+                        selectedLanguage
+                      )}
                     </div>
                   </div>
                 </If>
@@ -144,7 +148,10 @@ export const Chat = () => {
                       {data.message}
                     </div>
                     <div className="chat-footer text-xs opacity-50 mt-1">
-                      {dateToHumanReadable(data.createdAt)}
+                      {getDateToHumanReadable(
+                        data.createdAt,
+                        selectedLanguage
+                      )}
                     </div>
                   </div>
                 </If>
