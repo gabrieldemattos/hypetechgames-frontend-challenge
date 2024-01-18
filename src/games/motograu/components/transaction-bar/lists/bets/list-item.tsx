@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Transaction } from '.'
 import If from '@/core/components/conditions/if'
+import { formatCoin } from '../../../../utils/utils'
+import { useLanguageContext } from '../../../../hooks/useLanguageContext'
 
 type Props = {
   data: Transaction
 }
 
 export default function ListItem({ data }: Props) {
+  const { selectedLanguage } = useLanguageContext()
+
   const isGreen = data.outcome == 'win'
   const isRed = data.outcome == 'lose'
   const [randomNumber, setRandomNumber] = useState(null)
@@ -36,7 +40,10 @@ export default function ListItem({ data }: Props) {
       </h1>
       <h1 className="w-1/4 text-center items-center gap-2">
         <span className="w-10 text-right">
-          R$ {data.amount.toFixed(2)}
+          {formatCoin(
+            Number(data.amount.toFixed(2)),
+            selectedLanguage
+          )}
         </span>
       </h1>
       <h1 className="w-1/4 items-center text-center gap-2">

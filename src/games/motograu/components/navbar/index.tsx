@@ -8,7 +8,7 @@ import { useLanguageContext } from '../../hooks/useLanguageContext'
 
 type Props = {
   game: string
-  balance: string
+  balance: string | number
   executeAction: Function
   openChatHandler?: Function
 }
@@ -209,12 +209,7 @@ export default function Navbar({
           <div className="text-xs xl:text-sm text-center font-bold border rounded-lg py-1 px-1 xl:px-2 border-gray-500 border-opacity-60 lg:px-3">
             <div className="flex items-center gap-2">
               <CurrencyDollarIcon className="h-5 w-5 lg:h-6 lg:w-6 text-yellow-300" />
-              <div>
-                <span className="player-currency">
-                  {selectedLanguage === 'pt-BR' ? 'R$' : '$'}
-                </span>{' '}
-                <span className="balance">{balance}</span>
-              </div>
+              <span>{balance}</span>
             </div>
           </div>
 

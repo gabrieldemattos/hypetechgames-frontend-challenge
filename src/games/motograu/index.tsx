@@ -12,8 +12,12 @@ import { GameStatus } from '@/core/providers/enums/game-status'
 import Navbar from './components/navbar/index'
 import { Chat } from './components/chat/desktop/index'
 import ActivePlayers from './components/ActivePlayers'
+import { useLanguageContext } from './hooks/useLanguageContext'
+import { formatCoin } from './utils/utils'
 
 function HomePage() {
+  const { selectedLanguage } = useLanguageContext()
+
   const { setLoading } = useContext<any>(SessionContext)
   const { iframeRef, gameStatus, executeAction, balance } =
     useContext<any>(CrashGameContext)
@@ -38,7 +42,7 @@ function HomePage() {
             <Navbar
               game="motograu"
               executeAction={executeAction}
-              balance={balance}
+              balance={formatCoin(balance, selectedLanguage)}
             />
           </div>
           <div className="grid p-3 gap-3 grow rounded w-full grid-cols-12">

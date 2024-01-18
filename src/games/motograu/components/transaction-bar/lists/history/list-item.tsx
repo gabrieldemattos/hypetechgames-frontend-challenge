@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import If from '@/core/components/conditions/if'
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { dateToHumanReadable } from '@/core/helpers/date'
+import { useLanguageContext } from '../../../../hooks/useLanguageContext'
+import { formatCoin } from '../../../../utils/utils'
 
 type Props = {
   data: any
@@ -9,6 +11,7 @@ type Props = {
 }
 
 export default function ListItem({ data, showRoundInfo }: Props) {
+  const { selectedLanguage } = useLanguageContext()
   const isGreen = data.outcome == 'win'
   const isRed = data.outcome == 'lose'
 
@@ -25,7 +28,7 @@ export default function ListItem({ data, showRoundInfo }: Props) {
           {dateToHumanReadable(data.updated_at)}
         </h1>
         <h1 className="w-1/4 flex items-center justify-center gap-2">
-          R${data.amount}
+          {formatCoin(data.amount, selectedLanguage)}
         </h1>
         <h1 className="w-1/4 flex items-center gap-2">
           <If condition={data.outcome == 'win'}>

@@ -5,6 +5,7 @@ import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import Header from '../lists/bets/header'
 
 import { useLanguageContext } from '../../../hooks/useLanguageContext'
+import { formatCoin } from '../../../utils/utils'
 
 export default function BetsTab() {
   const { selectedLanguage } = useLanguageContext()
@@ -18,7 +19,7 @@ export default function BetsTab() {
       sum += parseFloat(bet.amount)
     })
 
-    return sum.toFixed(2)
+    return formatCoin(Number(sum.toFixed(2)), selectedLanguage)
   }
 
   useEffect(() => {
@@ -40,7 +41,6 @@ export default function BetsTab() {
           </div>
 
           <span className="text-sm font-bold text-white">
-            {selectedLanguage === 'pt-BR' ? 'R$ ' : '$ '}{' '}
             {sum(registeredBets)}
           </span>
         </div>

@@ -4,6 +4,7 @@ import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import Header from '../lists/history/header'
 
 import { useLanguageContext } from '../../../hooks/useLanguageContext'
+import { formatCoin } from '../../../utils/utils'
 
 export default function HistoryTab() {
   const { selectedLanguage } = useLanguageContext()
@@ -16,7 +17,7 @@ export default function HistoryTab() {
       sum += parseFloat(bet.amount)
     })
 
-    return sum.toFixed(2)
+    return formatCoin(Number(sum.toFixed(2)), selectedLanguage)
   }
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function HistoryTab() {
             </div>
 
             <span className="text-sm font-bold text-white">
-              R$ {sum(betsHistory)}
+              {sum(betsHistory)}
             </span>
           </div>
         ) : (
@@ -53,7 +54,7 @@ export default function HistoryTab() {
             </div>
 
             <span className="text-sm font-bold text-white">
-              $ {sum(betsHistory)}
+              {sum(betsHistory)}
             </span>
           </div>
         )}
