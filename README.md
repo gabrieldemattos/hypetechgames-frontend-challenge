@@ -1,12 +1,12 @@
-# Desafio Prático de Frontend Hypetech - Motorgrau (Customizado)
+# Desafio Prático de Frontend Hypetech - Motograu (Customizado)
 
-Bem-vindo à minha contribuição para o Desafio Prático de Frontend da Hypetech, focada no jogo **Motorgrau**.
+Bem-vindo à minha contribuição para o Desafio Prático de Frontend da Hypetech, focada no jogo **Motograu**.
 
-![Minha Contribuição](incluir aqui o link para uma imagem representativa das suas mudanças)
+[Apresentação das contribuições](https://youtu.be/EafBSnSQ7iM)
 
 ## Sobre o Desafio
 
-Este repositório original faz parte do Desafio Prático de Frontend da Hypetech. A proposta do desafio era aprimorar a interface de dois jogos da Hypetech: **Motograu** e **WallStreet**. No meu caso, escolhi trabalhar no jogo **Motorgrau**.
+Este repositório original faz parte do Desafio Prático de Frontend da Hypetech. A proposta do desafio era aprimorar a interface de dois jogos da Hypetech: **Motograu** e **WallStreet**. No meu caso, escolhi trabalhar no jogo **Motograu**.
 
 - [Repositório do Desafio Prático de Frontend Hypetech](https://github.com/hypetechgames/frontend-challenge)
 
@@ -18,7 +18,7 @@ Este repositório original faz parte do Desafio Prático de Frontend da Hypetech
 
 ## Minhas Alterações
 
-Neste desafio, trabalhei para aprimorar a interface do jogo **Motorgrau**, implementando melhorias e personalizações significativas. Abaixo estão algumas das principais alterações que fiz:
+Neste desafio, trabalhei para aprimorar a interface do jogo **Motograu**, implementando melhorias e personalizações significativas. Abaixo estão algumas das principais alterações que fiz:
 
 1. **Nova Interface para Desktop e Mobile:**
 
@@ -28,7 +28,7 @@ Neste desafio, trabalhei para aprimorar a interface do jogo **Motorgrau**, imple
      - **Organização Lógica:** O layout foi reestruturado para otimizar a experiência do usuário. Cerca de 90% da interação do usuário está concentrada no lado esquerdo, onde podem verificar o número de usuários conectados, enviar mensagens no chat (podendo ocultar o chat ou não), realizar apostas e trocar o idioma.
      - **Componentes Centrais:** O núcleo da experiência do jogo foi destacado no centro da tela para fácil acesso e destaque.
      - **Informações Adicionais:** Adicionei um painel à direita, fornecendo informações sobre as apostas e o histórico do usuário. O canto superior direito oferece acesso rápido ao perfil do usuário, status, classificação atual e à missão diária.
-     - **Versão Mobile:** Na versão mobile, algumas adaptações foram feitas, como a movimentação do ranking para o perfil e a exibição dos usuários online no topo da aplicação.
+     - **Versão Mobile:** Na versão mobile, algumas adaptações foram feitas, como a movimentação do ranking para o perfil, exibição dos usuários online no topo da aplicação e chat movido para a barra de navegação (ao lado do perfil do usuário).
 
    ![Nova Interface em Desktop](screenshots/desktop.png)
    ![Nova Interface em Mobile](screenshots/mobile.png)
