@@ -35,7 +35,7 @@ export default function ProgressBar({ max, value, color }: Props) {
   const { selectedLanguage } = useLanguageContext()
 
   return (
-    <div className="w-[28.125rem] relative flex items-center border border-gray-500 bg-gray-600 border-opacity-50 rounded-md h-9 dark:bg-gray-700 p-1">
+    <div className="w-[16rem] relative flex items-center border border-gray-500 bg-gray-600 border-opacity-50 rounded-md h-8 dark:bg-gray-700 p-1">
       <div
         className={`${getBackgroundColor(
           color
@@ -49,8 +49,8 @@ export default function ProgressBar({ max, value, color }: Props) {
 
       <small className="absolute w-full h-full font-semibold text-center text-xs pointer-events-none flex items-center justify-center text-gray-200 uppercase tracking-wide">
         {selectedLanguage === 'pt-BR'
-          ? 'A próxima rodada começará em'
-          : 'Next round starts in'}{' '}
+          ? 'Próxima rodada em'
+          : 'Next round in'}{' '}
         {Math.abs(value)}{' '}
         {selectedLanguage === 'pt-BR'
           ? value > 1
@@ -59,10 +59,7 @@ export default function ProgressBar({ max, value, color }: Props) {
           : value > 1
           ? 'seconds'
           : 'second'}
-        .{' '}
-        {selectedLanguage === 'pt-BR'
-          ? 'Prepare-se!'
-          : 'Prepare yourself!'}
+        !
       </small>
     </div>
   )
