@@ -3,7 +3,7 @@ import If from '@/core/components/conditions/if'
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { dateToHumanReadable } from '@/core/helpers/date'
 import { useLanguageContext } from '../../../../hooks/useLanguageContext'
-import { formatCoin } from '../../../../utils/utils'
+import { formatCoin } from '../../../../utils/format-currency'
 
 type Props = {
   data: any

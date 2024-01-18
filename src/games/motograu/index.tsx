@@ -13,7 +13,7 @@ import Navbar from './components/navbar/index'
 import { Chat } from './components/chat/desktop/index'
 import ActivePlayers from './components/ActivePlayers'
 import { useLanguageContext } from './hooks/useLanguageContext'
-import { formatCoin } from './utils/utils'
+import { formatCoin } from './utils/format-currency'
 
 function HomePage() {
   const { selectedLanguage } = useLanguageContext()
@@ -77,7 +77,7 @@ function HomePage() {
                 <Results />
 
                 {/* CONTROLES DE APOSTAS */}
-                <div className="div sm:mb-10 xl:mb-0">
+                <div className="w-full sm:mb-10 xl:mb-0">
                   <Controls />
                 </div>
               </div>

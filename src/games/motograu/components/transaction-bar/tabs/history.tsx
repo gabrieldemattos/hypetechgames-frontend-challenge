@@ -4,7 +4,7 @@ import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import Header from '../lists/history/header'
 
 import { useLanguageContext } from '../../../hooks/useLanguageContext'
-import { formatCoin } from '../../../utils/utils'
+import { formatCoin } from '../../../utils/format-currency'
 
 export default function HistoryTab() {
   const { selectedLanguage } = useLanguageContext()

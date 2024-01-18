@@ -9,7 +9,7 @@ export default function CrashControl() {
         <MobileControl />
       </div>
 
-      <div className="hidden sm:block">
+      <div className="hidden sm:block w-full">
         <DesktopControl />
       </div>
     </div>

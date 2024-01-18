@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Transaction } from '.'
 import If from '@/core/components/conditions/if'
-import { formatCoin } from '../../../../utils/utils'
+import { formatCoin } from '../../../../utils/format-currency'
 import { useLanguageContext } from '../../../../hooks/useLanguageContext'
 
 type Props = {

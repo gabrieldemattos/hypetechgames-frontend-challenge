@@ -24,7 +24,7 @@ const TextField = ({
   return (
     <div className="relative w-full h-full">
       <div
-        className={`h-full font-bold bg-gray-600 bg-opacity-40 input input-sm rounded px-2 pt-6 w-full border-0 border-gray-300 p-2 ${
+        className={`flex h-full font-bold bg-gray-600 bg-opacity-40 input input-sm rounded px-2 pt-6 w-full border-0 border-gray-300 p-2 ${
           disabled
             ? 'bg-gray-700 bg-opacity-30 text-gray-700'
             : 'text-white'

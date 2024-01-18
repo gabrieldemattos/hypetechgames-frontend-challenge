@@ -17,7 +17,7 @@ import { TransactionStatus } from '@/core/providers/enums/transaction'
 import { TransactionMode } from '@/core/providers/enums/transaction'
 import { MAX_AMOUNT, MIN_AMOUNT } from '@/core/constants'
 import FastBetButton from '../../FastBetButton'
-import { formatCoin } from '../../../utils/utils'
+import { formatCoin } from '../../../utils/format-currency'
 
 interface FormProps {
   position: string
@@ -142,7 +142,7 @@ export default function CrashForm({ position }: FormProps) {
       <form
         ref={formRef}
         method="POST"
-        className="w-full xl:w-[100%]"
+        className="w-full"
         onSubmit={(e) => submitTransaction(e)}
       >
         <div className="w-full flex justify-center mb-3">
@@ -232,7 +232,7 @@ export default function CrashForm({ position }: FormProps) {
               </div>
 
               {/* AUTO RETIRAR */}
-              <div className="flex gap-3 h-14 lg:w-full xl:w-auto">
+              <div className="flex gap-3 h-14 lg:w-full xl:w-fit">
                 <TextField
                   id="valueInput"
                   name="amount"

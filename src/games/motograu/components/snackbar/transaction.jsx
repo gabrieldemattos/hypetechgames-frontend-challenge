@@ -1,4 +1,5 @@
 import { useLanguageContext } from '../../hooks/useLanguageContext'
+import { formatCoin } from '../../utils/format-currency'
 
 export default function Transaction({
   amount,
@@ -41,14 +42,20 @@ export default function Transaction({
               <>
                 <div className="font-bold text-xs">Você ganhou</div>
                 <strong className="text-white text-sm">
-                  R$ {parseFloat(amount * cashed_out_at).toFixed(2)}
+                  {formatCoin(
+                    parseFloat(amount * cashed_out_at).toFixed(2),
+                    selectedLanguage
+                  )}
                 </strong>
               </>
             ) : (
               <>
                 <div className="font-bold text-xs">You won</div>
                 <strong className="text-white text-sm">
-                  $ {parseFloat(amount * cashed_out_at).toFixed(2)}
+                  {formatCoin(
+                    parseFloat(amount * cashed_out_at).toFixed(2),
+                    selectedLanguage
+                  )}
                 </strong>
               </>
             )}
