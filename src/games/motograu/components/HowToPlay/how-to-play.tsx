@@ -40,7 +40,7 @@ export default function HowToPlay({ show, toggle }: Props) {
             </section>
 
             <div className="p-4 text-base ">
-              <div className="grid lg:flex gap-8 align-center py-4">
+              <div className="flex flex-col gap-8 align-center py-4">
                 <img
                   src="../images/logos/hypetech.png"
                   className="h-10 mx-auto"
@@ -67,7 +67,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1 ">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Digite o valor desejado e clique em APOSTAR
@@ -82,7 +82,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1 ">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Veja como o motoqueiro dá o grau e as
@@ -98,7 +98,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Retirar antes do motoqueiro perder o
@@ -198,7 +198,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                   <div className="flex flex-col pl-4 gap-4">
                     <p className="text-base hidden xl:block">
                       <span className="text-2xl pr-2">&#9755;</span> À
-                      direita existe o painel "Apostas ao vivo".
+                      esquerda existe o painel "Apostas ao vivo".
                       Mostra as apostas que foram feitas na rodada
                       atual.
                     </p>
@@ -212,17 +212,17 @@ export default function HowToPlay({ show, toggle }: Props) {
 
                     <p className="text-base ">
                       <span className="text-xl pr-2">&#9755;</span>O
-                      painel <b>"Histórico"</b> contém informações
-                      sobre as apostas feitas e os levantamentos
-                      durante todo o tempo do jogo.
+                      painel <b>"Histórico"</b> exibe detalhes sobre
+                      as apostas realizadas e os levantamentos ao
+                      longo da participação do jogador no jogo.
                     </p>
 
                     <p className="text-base ">
-                      <span className="text-xl pr-2">&#9755;</span>O
-                      painel <b>"LANCES ANTERIORES"</b> que ha acima
-                      da tela do jogo contém informações sobre os
-                      últimos resultados que saíram durante os últimos
-                      jogos.
+                      <span className="text-xl pr-2">&#9755;</span>Os
+                      resultados das rodadas anteriores são exibidos
+                      entre a tela do jogo e os botões de aposta,
+                      apresentando informações sobre os
+                      multiplicadores das últimas rodadas.
                     </p>
                   </div>
                 </div>
@@ -244,9 +244,9 @@ export default function HowToPlay({ show, toggle }: Props) {
 
                     <p className="text-base hidden xl:block">
                       <span className="text-xl pr-2">&#9755;</span>
-                      No canto inferior esquerdo (abaixo das apostas),
-                      você encontrará o bate-papo geral. Ele é
-                      projetado para se comunicar com outros
+                      No canto inferior esquerdo (abaixo das apostas e
+                      histórico), você encontrará o bate-papo geral.
+                      Ele é projetado para se comunicar com outros
                       jogadores. Além disso, o bate-papo apresenta
                       automaticamente informações sobre o recebimento
                       de grandes ganhos.
@@ -339,7 +339,7 @@ export default function HowToPlay({ show, toggle }: Props) {
             </section>
 
             <div className="p-4 text-base ">
-              <div className="grid lg:flex gap-8 align-center py-4">
+              <div className="flex flex-col gap-8 align-center py-4">
                 <img
                   src="../images/logos/hypetech.png"
                   className="h-10 mx-auto"
@@ -365,7 +365,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1 ">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Enter the desired amount and click on BET
@@ -380,7 +380,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1 ">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Watch as the rider does the wheelie and the
@@ -396,7 +396,7 @@ export default function HowToPlay({ show, toggle }: Props) {
                     />
                     <div className="text-center mt-1">
                       <p
-                        className="text-white font-semibold text-base"
+                        className="text-white font-semibold text-base italic"
                         style={{ lineHeight: '2' }}
                       >
                         Withdraw before the rider loses balance and
@@ -488,34 +488,35 @@ export default function HowToPlay({ show, toggle }: Props) {
 
                 <div className="flex flex-col gap-1 mt-7">
                   <h3 className="text-base text-light text-red-400 opacity-1 mb-2 text-center">
-                    Live bets and statistics
+                    Live Bets and Statistics
                   </h3>
 
                   <div className="flex flex-col pl-4 gap-4">
                     <p className="text-base hidden xl:block">
                       <span className="text-2xl pr-2">&#9755;</span>{' '}
-                      To the right is the "Live Bets" panel. It shows
-                      the bets that were made in the current round.
+                      On the left is the "Live Bets" panel, displaying
+                      bets placed in the current round.
                     </p>
 
                     <p className="text-base xl:hidden">
                       <span className="text-xl pr-2">&#9755;</span> At
-                      the end of the screen is the "Live Bets" panel.
-                      It shows the bets that were made in the current
-                      round.
+                      the bottom of the screen is the "Live Bets"
+                      panel, showing bets made in the current round.
                     </p>
 
                     <p className="text-base ">
-                      <span className="text-xl pr-2">&#9755;</span>{' '}
-                      The <b>"History"</b> panel contains information
-                      about bets and withdrawals throughout the game.
+                      <span className="text-xl pr-2">&#9755;</span>The
+                      "History" panel provides details on bets placed
+                      and withdrawals made during the player's
+                      participation in the game.
                     </p>
 
                     <p className="text-base ">
-                      <span className="text-xl pr-2">&#9755;</span>{' '}
-                      The <b>"PREVIOUS BETS"</b> panel above the game
-                      screen contains information about the last
-                      results that came out during the last games.
+                      <span className="text-xl pr-2">&#9755;</span>
+                      Results from previous rounds are displayed
+                      between the game screen and the bet buttons,
+                      providing information on the multipliers from
+                      the last rounds.
                     </p>
                   </div>
                 </div>
@@ -535,12 +536,12 @@ export default function HowToPlay({ show, toggle }: Props) {
                     </p>
 
                     <p className="text-base hidden xl:block">
-                      <span className="text-xl pr-2">&#9755;</span>
-                      In the bottom left corner (below the bets), you
-                      will find the general chat. It is designed to
-                      communicate with other players. In addition, the
-                      chat automatically displays information about
-                      receiving big wins.
+                      <span className="text-xl pr-2">&#9755;</span> In
+                      the bottom left corner (below bets and history),
+                      you'll find the general chat. It is designed for
+                      communication with other players. Additionally,
+                      the chat automatically highlights information
+                      about significant wins.
                     </p>
                   </div>
                 </div>

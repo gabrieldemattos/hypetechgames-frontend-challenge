@@ -13,10 +13,10 @@ type Props = {
 }
 
 export default function HowToPlay({ show, toggle }: Props) {
-/*   const { soundClick } = useContext(WallStreetGameContext) */
+  /*   const { soundClick } = useContext(WallStreetGameContext) */
 
   const handleClick = () => {
- /*    soundClick() */
+    /*    soundClick() */
     toggle()
   }
 
@@ -64,7 +64,7 @@ export default function HowToPlay({ show, toggle }: Props) {
             <div className="grid lg:grid-cols-2 gap-12 mb-8 mx-auto">
               <div className="image-step sm:w-[60%] md:w-[45%] lg:w-[85%]  lg:h-[230px] h-[280px] mx-auto">
                 <img
-                  className="step-image mx-auto w-full h-[80%] lg:h-[73%] md:h-[78%] sm:h-[80%] h-[78%]"
+                  className="step-image mx-auto w-full h-[100%] lg:h-[73%] md:h-[78%] sm:h-[80%] h-[78%]"
                   src="../images/HTP/wall-street/step-1.png"
                 />
                 <div
