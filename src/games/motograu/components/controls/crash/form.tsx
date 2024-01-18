@@ -17,6 +17,7 @@ import { TransactionStatus } from '@/core/providers/enums/transaction'
 import { TransactionMode } from '@/core/providers/enums/transaction'
 import { MAX_AMOUNT, MIN_AMOUNT } from '@/core/constants'
 import FastBetButton from '../../FastBetButton'
+import { formatCoin } from '../../../utils/utils'
 
 interface FormProps {
   position: string
@@ -168,7 +169,10 @@ export default function CrashForm({ position }: FormProps) {
                       transaction.status !=
                       TransactionStatus.UNREGISTERED
                     }
-                    value={transaction.amount}
+                    value={formatCoin(
+                      transaction.amount,
+                      selectedLanguage
+                    )}
                     setValue={updateAmount}
                     label={
                       selectedLanguage === 'pt-BR'
@@ -236,7 +240,10 @@ export default function CrashForm({ position }: FormProps) {
                     transaction.status !=
                     TransactionStatus.UNREGISTERED
                   }
-                  value={transaction.exitValue}
+                  value={formatCoin(
+                    transaction.exitValue,
+                    selectedLanguage
+                  )}
                   setValue={updateExitValue}
                   label={
                     selectedLanguage === 'pt-BR'
@@ -362,11 +369,12 @@ export default function CrashForm({ position }: FormProps) {
                         : 'Cancel bet'}
                     </span>
                     <span className="block">
-                      {selectedLanguage === 'pt-BR'
-                        ? 'de R$ '
-                        : 'of $ '}
-                      {transaction.amount} (
-                      {transaction.roundCount + 1})
+                      {selectedLanguage === 'pt-BR' ? 'de ' : 'of '}
+                      {formatCoin(
+                        transaction.amount,
+                        selectedLanguage
+                      )}{' '}
+                      ({transaction.roundCount + 1})
                     </span>
                   </div>
                 </If>
@@ -380,10 +388,11 @@ export default function CrashForm({ position }: FormProps) {
                         : 'Cancel bet '}
                     </span>
                     <span className="block">
-                      {selectedLanguage === 'pt-BR'
-                        ? 'de R$ '
-                        : 'of $ '}
-                      {transaction.amount}
+                      {selectedLanguage === 'pt-BR' ? 'de ' : 'of '}
+                      {formatCoin(
+                        transaction.amount,
+                        selectedLanguage
+                      )}
                     </span>
                   </div>
                 </If>
@@ -440,18 +449,24 @@ export default function CrashForm({ position }: FormProps) {
                 <If condition={transaction.autoStarted}>
                   <span className="text-lg lg:text-xl">
                     {selectedLanguage === 'pt-BR'
-                      ? 'Retirar R$'
-                      : 'Withdraw $'}{' '}
-                    {(transaction.amount * multiplier).toFixed(2)}
+                      ? 'Retirar '
+                      : 'Withdraw '}{' '}
+                    {formatCoin(
+                      transaction.amount * multiplier,
+                      selectedLanguage
+                    )}
                   </span>
                 </If>
 
                 <If condition={!transaction.autoStarted}>
                   <span className="text-lg lg:text-xl">
                     {selectedLanguage === 'pt-BR'
-                      ? 'Retirar R$'
-                      : 'Withdraw $'}{' '}
-                    {(transaction.amount * multiplier).toFixed(2)}
+                      ? 'Retirar '
+                      : 'Withdraw '}{' '}
+                    {formatCoin(
+                      transaction.amount * multiplier,
+                      selectedLanguage
+                    )}
                   </span>
                 </If>
               </button>

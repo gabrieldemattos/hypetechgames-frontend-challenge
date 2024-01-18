@@ -24,7 +24,7 @@ const TextField = ({
   return (
     <div className="relative w-full h-full">
       <div
-        className={`flex items-center justify-center h-full font-bold bg-gray-600 bg-opacity-40 input input-sm rounded px-2 pt-6 w-full border-0 border-gray-300 p-2 ${
+        className={`h-full font-bold bg-gray-600 bg-opacity-40 input input-sm rounded px-2 pt-6 w-full border-0 border-gray-300 p-2 ${
           disabled
             ? 'bg-gray-700 bg-opacity-30 text-gray-700'
             : 'text-white'
@@ -41,14 +41,6 @@ const TextField = ({
           className="h-full font-bold bg-transparent input p-0 input-sm w-full disabled:bg-transparent border-none text-base xl:text-xl mt-[.0625rem] text-white outline-none focus:outline-none focus:ring-0"
           placeholder=" "
         />
-
-        <span className="text-base xl:text-lg">
-          {label === 'Quantidade' || label === 'Quantity'
-            ? ''
-            : selectedLanguage === 'pt-BR'
-            ? 'R$'
-            : '$'}
-        </span>
       </div>
       <label
         htmlFor={id}
