@@ -1,5 +1,4 @@
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import Tabs from '@/core/components/tabs'
 import If from '@/core/components/conditions/if'
 import TextField from '../../text-field/index'

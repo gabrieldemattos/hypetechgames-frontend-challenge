@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { useLanguageContext } from '../../hooks/useLanguageContext'
-
 type Props = {
   id: string
   name: string
@@ -19,8 +17,6 @@ const TextField = ({
   value,
   setValue,
 }: Props) => {
-  const { selectedLanguage } = useLanguageContext()
-
   return (
     <div className="relative w-full h-full">
       <div

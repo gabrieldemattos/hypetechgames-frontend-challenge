@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import ProgressBar from '../progress-bar/index'
-import If from '@/core/components/conditions/if'
+import If from '../conditions/if'
 import { GameStatus } from '@/core/providers/enums/game-status'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 

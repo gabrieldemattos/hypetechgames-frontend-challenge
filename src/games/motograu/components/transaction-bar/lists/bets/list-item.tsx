@@ -12,8 +12,7 @@ export default function ListItem({ data }: Props) {
   const { selectedLanguage } = useLanguageContext()
 
   const isGreen = data.outcome == 'win'
-  const isRed = data.outcome == 'lose'
-  const [randomNumber, setRandomNumber] = useState(null)
+  const [randomNumber, setRandomNumber] = useState<number>(0)
 
   // Gere o número aleatório uma única vez quando o componente for montado
   useEffect(() => {

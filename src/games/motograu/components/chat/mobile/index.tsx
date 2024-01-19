@@ -2,10 +2,7 @@ import React, { useContext, useState } from 'react'
 
 import If from '../../conditions/if'
 
-import {
-  selectedLanguage,
-  useLanguageContext,
-} from '../../../hooks/useLanguageContext'
+import { useLanguageContext } from '../../../hooks/useLanguageContext'
 
 import EmojiPicker, {
   Theme,
