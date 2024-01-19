@@ -14,8 +14,7 @@ import EmojiPicker, {
 } from 'emoji-picker-react'
 import { FaceSmileIcon } from '@heroicons/react/24/outline'
 import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
-import { IGameMessage } from '../../providers/interfaces/game-message.interface'
-import { dateToHumanReadable } from '@/core/helpers/date'
+import { IGameMessage } from '../../../../../core/providers/interfaces/game-message.interface'
 import { getDateToHumanReadable } from '../../../utils/date'
 type Props = {
   show: boolean
@@ -74,7 +73,7 @@ export const Chat = ({ show }: Props) => {
                           </div>
                         </div>
 
-                        <div className="chat-bubble min-h-0 break-words">
+                        <div className="chat-bubble min-h-0 break-words bg-green-500">
                           {data.message}
                         </div>
                         <div className="chat-footer text-xs opacity-50 mt-1">
