@@ -20,9 +20,7 @@ export default function Tabs({ tabs, size, active, toggle }: Props) {
   const { selectedLanguage } = useLanguageContext()
 
   return (
-    <div
-      className={`tabs p-1 rounded bg-gray-700 bg-opacity-20 flex w-full justify-center`}
-    >
+    <div className="tabs p-1 rounded bg-gray-700 bg-opacity-20 flex w-full justify-center">
       {selectedLanguage === 'pt-BR' && (
         <>
           {tabs.map((tab) => {

@@ -28,10 +28,7 @@ const AvailableRanks = ({ show, toggle }: AvailableRanksProps) => {
             </h1>
           </div>
 
-          <div
-            className="text-lg text-gray-600 hover:text-gray-400 transition-all cursor-pointer"
-            onClick={() => console.log('ae')}
-          >
+          <div className="text-lg text-gray-600 hover:text-gray-400 transition-all cursor-pointer">
             <button onClick={() => toggle()}>X</button>
           </div>
         </div>

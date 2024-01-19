@@ -330,8 +330,8 @@ export default function Navbar({
                       {playerName}
                     </div>
                     <div className="text-xs flex mt-1 gap-2">
-                      {currentStatus.map((status) => (
-                        <div className="flex key={status.status}">
+                      {currentStatus.map((status, index) => (
+                        <div className="flex" key={index}>
                           <p
                             className={`${status.stylesIcon} mr-2`}
                           ></p>
