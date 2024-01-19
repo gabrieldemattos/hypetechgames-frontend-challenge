@@ -40,12 +40,12 @@ export default function HowToPlay({ show, toggle }: Props) {
             </section>
 
             <div className="p-4 text-base ">
-              <div className="flex flex-col gap-8 align-center py-4">
+              <div className="flex flex-col gap-8 py-4">
                 <img
                   src="../images/logos/hypetech.png"
                   className="h-10 mx-auto"
                 />
-                <p className="font-semibold ">
+                <p className="font-semibold text-center">
                   A Hypetech é o último grito em entretenimento de
                   jogo para uma nova geração de jogadores. Poderá
                   ganhar várias vezes essa quantia em apenas alguns

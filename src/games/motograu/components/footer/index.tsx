@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import About from '@/core/components/modal-provably-fair'
+import About from '../modal-provably-fair/index'
 
 export default function Footer({}) {
   const [showModal, setShowModal] = useState<boolean>(false)
