@@ -1,6 +1,6 @@
 import Modal from '@/core/components/modal'
 import { BanknotesIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 
@@ -12,29 +12,11 @@ type Props = {
 export default function About({ show, toggle }: Props) {
   const { selectedLanguage } = useLanguageContext()
 
-  const modalRef = useRef<HTMLDivElement>(null)
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      modalRef.current &&
-      !modalRef.current.contains(event.target as Node)
-    ) {
-      toggle()
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  })
-
   return (
     <>
       {selectedLanguage === 'pt-BR' ? (
         <Modal show={show} toggle={toggle}>
-          <div className="py-0" ref={modalRef}>
+          <div className="py-0">
             <section
               className="py-2 flex justify-between items-center px-3 pt-3"
               style={{
@@ -179,7 +161,7 @@ export default function About({ show, toggle }: Props) {
         </Modal>
       ) : (
         <Modal show={show} toggle={toggle}>
-          <div className="py-0" ref={modalRef}>
+          <div className="py-0">
             <section
               className="py-2 flex justify-between items-center px-3 pt-3"
               style={{
