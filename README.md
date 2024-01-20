@@ -22,16 +22,23 @@ Neste desafio, trabalhei para aprimorar a interface do jogo **Motograu**, implem
 
 1. **Nova Interface para Desktop e Mobile:**
 
-   - **Objetivo da Mudança:** Aprimorei a interface do projeto, tornando-a responsiva para desktop e mobile.
+   - **Objetivo da Mudança:** Aprimorei a interface do projeto, tornando-a responsiva para desktop e dispositivos móveis.
    - **Pensamento por Trás da Mudança:**
      - **Layout Responsivo:** A interface foi reformulada para proporcionar uma experiência fluida tanto em desktop quanto em dispositivos móveis.
-     - **Organização Lógica:** O layout foi reestruturado para otimizar a experiência do usuário. Cerca de 90% da interação do usuário está concentrada no lado esquerdo, onde podem verificar o número de usuários conectados, enviar mensagens no chat (podendo ocultar o chat ou não), realizar apostas e trocar o idioma.
-     - **Componentes Centrais:** O núcleo da experiência do jogo foi destacado no centro da tela para fácil acesso e destaque.
-     - **Informações Adicionais:** Adicionei um painel à direita, fornecendo informações sobre as apostas e o histórico do usuário. O canto superior direito oferece acesso rápido ao perfil do usuário, status, classificação atual e à missão diária.
+     - **Organização Lógica:** O layout foi reestruturado para otimizar a experiência do usuário. No lado esquerdo, os usuários podem alterar o idioma, verificar informações sobre apostas da rodada e histórico, além de verificar o número de usuários conectados e enviar mensagens no chat (com opção de ocultar o chat).
+     - **Componentes Centrais:** O núcleo da experiência do jogo foi realçado no centro da tela para fácil acesso e destaque. O histórico do multiplicador das rodadas anteriores agora está abaixo da tela do jogo, junto com os botões de aposta.
+     - **Informações Adicionais:** O canto superior direito oferece acesso rápido ao perfil do usuário, status, classificação atual e à missão diária.
      - **Versão Mobile:** Na versão mobile, algumas adaptações foram feitas, como a movimentação do ranking para o perfil e a exibição dos usuários online no topo da aplicação.
 
-   ![Nova Interface em Desktop](screenshots/desktop.png)
-   ![Nova Interface em Mobile](screenshots/mobile.png)
+### Desktop
+
+![Nova Interface em Desktop](screenshots/desktop.png)
+Aprimoramentos no layout para oferecer uma experiência otimizada em desktop.
+
+### Mobile
+
+![Nova Interface em Mobile](screenshots/mobile.png)
+Adaptações específicas para garantir uma experiência ideal em dispositivos móveis.
 
 2. **Incluído Novos Componentes:**
 
