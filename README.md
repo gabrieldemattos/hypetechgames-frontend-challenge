@@ -38,6 +38,7 @@ Aprimoramentos no layout para oferecer uma experiência otimizada em desktop.
 ### Mobile
 
 ![Nova Interface em Mobile](screenshots/mobile.png)
+<br>
 Adaptações específicas para garantir uma experiência ideal em dispositivos móveis.
 
 2. **Incluído Novos Componentes:**
