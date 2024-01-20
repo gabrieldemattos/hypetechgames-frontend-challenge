@@ -148,7 +148,11 @@ export const Chat = ({ show }: Props) => {
                   <input
                     className="input input-sm w-full outline-none focus:outline-none"
                     maxLength={100}
-                    placeholder="Max: 200 caracteres"
+                    placeholder={
+                      selectedLanguage == 'pt-BR'
+                        ? 'Max: 200 caracteres'
+                        : 'Max: 200 characters'
+                    }
                     value={message}
                     onChange={handleMessage}
                     onKeyDown={handleMessage}
