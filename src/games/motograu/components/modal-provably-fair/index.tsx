@@ -1,9 +1,5 @@
 import Modal from '@/core/components/modal'
-import {
-  ArrowRightOnRectangleIcon,
-  BanknotesIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import { BanknotesIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useRef, useEffect } from 'react'
 
 import { useLanguageContext } from '../../hooks/useLanguageContext'
@@ -149,7 +145,7 @@ export default function About({ show, toggle }: Props) {
                 <div className="flex flex-col pl-4 gap-4">
                   <p>
                     <span className="text-xl pr-2">&#9755;</span> Você
-                    pode verificar a justiça de cada rodada do jogo
+                    pode verificar a justiça de cada rodada do jogo no
                     histórico, clicando no ícone verde.
                   </p>
 
