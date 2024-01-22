@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import Tabs from '@/core/components/tabs'
+import Tabs from '../../tabs/constrolsTabs/index'
 import If from '@/core/components/conditions/if'
 import TextField from '../../text-field/index'
 import { GameStatus } from '@/core/providers/enums/game-status'
