@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import If from '../../conditions/if'
 
@@ -53,12 +53,24 @@ export const Chat = ({ show }: Props) => {
     else setMessage(e.target.value)
   }
 
+  const divScrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (divScrollRef.current) {
+      divScrollRef.current.scrollTop =
+        divScrollRef.current.scrollHeight
+    }
+  })
+
   return (
     <div className="block xl:hidden">
       <If condition={show}>
         <div className="w-80 mr-2 py-2 px-2 border-gray-600 border border-opacity-70 text-sm rounded-lg bg-black absolute right-0 z-40 h-[30%]">
           <div className="flex flex-col relative gap-3 h-full">
-            <div className="p-2 pr-4 flex-grow basis-0 overflow-x-hidden overflow-y-auto scrollbar-w-2 scrollbar-track-transparent scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded">
+            <div
+              ref={divScrollRef}
+              className="p-2 pr-4 flex-grow basis-0 overflow-x-hidden overflow-y-auto scrollbar-w-2 scrollbar-track-transparent scrollbar-thumb-gray-700 scrollbar scrollbar-track-rounded scrollbar-thumb-rounded"
+            >
               {messages.map((data: IGameMessage, idx: number) => {
                 return (
                   <div key={idx}>
