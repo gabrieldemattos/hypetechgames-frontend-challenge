@@ -12,8 +12,6 @@ type Props = {
 export default function ListItem({ data }: Props) {
   const { gameStatus } = useContext<any>(CrashGameContext)
 
-  console.log(gameStatus)
-
   const { selectedLanguage } = useLanguageContext()
 
   const isGreen = data.outcome == 'win'
