@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Transaction } from '.'
 import If from '@/core/components/conditions/if'
 import { formatCoin } from '../../../../utils/format-currency'
+import { CrashGameContext } from '@/core/providers/games/crash-game.provider'
 import { useLanguageContext } from '../../../../hooks/useLanguageContext'
 
 type Props = {
@@ -9,6 +10,10 @@ type Props = {
 }
 
 export default function ListItem({ data }: Props) {
+  const { gameStatus } = useContext<any>(CrashGameContext)
+
+  console.log(gameStatus)
+
   const { selectedLanguage } = useLanguageContext()
 
   const isGreen = data.outcome == 'win'
@@ -38,7 +43,13 @@ export default function ListItem({ data }: Props) {
         </span>
       </h1>
       <h1 className="w-1/4 text-center items-center gap-2">
-        <span className="w-10 text-right">
+        <span
+          className={`w-10 text-right ${
+            data.outcome !== 'win' &&
+            gameStatus === 'game_over' &&
+            'text-red-500 text-opacity-70'
+          }`}
+        >
           {formatCoin(
             Number(data.amount.toFixed(2)),
             selectedLanguage
@@ -51,6 +62,14 @@ export default function ListItem({ data }: Props) {
             {data.payout}x
           </span>
         </If>
+
+        <If
+          condition={
+            data.outcome !== 'win' && gameStatus === 'game_over'
+          }
+        >
+          <span className="text-red-500">-</span>
+        </If>
       </h1>
       <div className="w-1/4 text-right">
         <If condition={data.outcome === 'win'}>
@@ -58,6 +77,14 @@ export default function ListItem({ data }: Props) {
           typeof data.profit === 'number'
             ? `R$ ${data.profit.toFixed(2)}`
             : '0,00'}
+        </If>
+
+        <If
+          condition={
+            data.outcome !== 'win' && gameStatus === 'game_over'
+          }
+        >
+          <span className="text-red-500 pr-4">-</span>
         </If>
       </div>
     </div>

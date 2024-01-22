@@ -30,9 +30,9 @@ export default function Tabs({ tabs, size, active, toggle }: Props) {
           >
             <div className="flex gap-2 items-center">
               {tab.title === 'Normal' ? (
-                <PiCursorClickThin className="w-5 h-5 text-white" />
+                <PiCursorClickThin className="w-5 h-5" />
               ) : (
-                <IoIosRepeat className="w-5 h-5 text-white" />
+                <IoIosRepeat className="w-5 h-5" />
               )}
               {tab.title}
             </div>
